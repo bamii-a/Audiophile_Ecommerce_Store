@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import mobileImage from "../assets/product-yx1-earphones/mobile/image-product.jpg";
 
 const SpeakerCategory = ({
   name,
