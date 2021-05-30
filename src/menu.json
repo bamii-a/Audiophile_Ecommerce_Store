@@ -1,0 +1,18 @@
+[
+    {   "id":1,
+        "category": "Headphones",
+        "url":"/Headphones",
+        "image":"https://res.cloudinary.com/bamii/image/upload/v1621702600/ecommerce-menubar/image-headphones_od1pie.png"
+    },
+    {   "id":2,
+        "category": "Speakers",
+        "url":"/Speakers",
+        "image":"https://res.cloudinary.com/bamii/image/upload/v1621702600/ecommerce-menubar/image-speakers_abwxlc.png"
+    },
+    {   "id":3,
+        "category": "Earphones",
+        "url":"/Earphones",
+        "image":"https://res.cloudinary.com/bamii/image/upload/v1621702600/ecommerce-menubar/image-earphones_waheeh.png"
+    }
+]
+

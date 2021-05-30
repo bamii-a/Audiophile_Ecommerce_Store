@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "url": "/",
+    "text": "home"
+  },
+  {
+    "id": 2,
+    "url": "/headphones",
+    "text": "headphones"
+  },
+  {
+    "id": 3,
+    "url": "/speakers",
+    "text": "speakers"
+  },
+  {
+    "id": 4,
+    "url": "/earphones",
+    "text": "earphones"
+  }
+]
