@@ -6,7 +6,7 @@ import heroBackgroundDesktop from "../assets/home/desktop/image-hero.jpg";
 
 const Hero = () => {
   return (
-      <Wrapper>
+    <Wrapper>
       <section className="hero">
         <div className="hero-content">
           <h5>new product</h5>
@@ -14,10 +14,10 @@ const Hero = () => {
             XX99 Mark II <br /> Headphone
           </h2>
           <p>
-            Experience natural, life like audio and  exceptional build
-            quality made for the passionate music enthusiast.
+            Experience natural, life like audio and exceptional build quality
+            made for the passionate music enthusiast.
           </p>
-          <Link to='/'>
+          <Link to={`/ProductDetail/${4}`}>
             <button type="submit" className="btn hero-btn">
               see product
             </button>

@@ -14,22 +14,21 @@ const EarphoneCategory = () => {
     description,
   } = earphoneCat;
 
-  let screen;
+  let imageForScreen;
   if (window.screen.width <= 414) {
-    screen = "mobile";
+    imageForScreen = `${image.mobile}`;
   } else if (window.screen.width < 800) {
-    screen = "tablet";
+    imageForScreen = `${image.tablet}`;
   } else {
-    screen = "desktop";
+    imageForScreen = `${image.desktop}`;
   }
 
-  const imageForScreen = `../assets/product-yx1-earphones/${screen}/image-product.jpg`;
 
   return (
     <Wrapper>
       <section key={id} className="section-center category-style-container">
         <div className="catImageContainer">
-          <img src={image.mobile} alt={slug} className="catImage" />
+          <img src={imageForScreen} alt={slug} className="catImage" />
         </div>
         <div className="productContent">
           {/*<h3 className="">new product</h3>*/}
@@ -52,7 +51,7 @@ const Wrapper = styled.div`
     margin: 2rem auto;
   }
   .catImageContainer {
-    height: 30rem;
+    height: 100%;
     width: 95%;
     margin: 1rem auto;
     border-radius: var(--radius);
@@ -62,9 +61,10 @@ const Wrapper = styled.div`
   }
   .catImage {
     align-self: center;
-    height: 25rem;
+    height: 100%;
     width: 100%;
     border-radius: var(--radius);
+    object-fit: cover;
   }
   .productContent {
     padding: 30px;

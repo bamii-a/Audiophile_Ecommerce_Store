@@ -2,17 +2,13 @@ import React, { useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import { useParams, Link } from "react-router-dom";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
-import { CategoryLinks } from "../components";
-import mobileImage from "../assets/product-yx1-earphones/mobile/image-product.jpg";
-import mainData from "../data.json";
+import Extras from "../components";
 
 const SingleProductDetail = ({
-  id,
   name,
   slug,
   image,
   description,
-  category,
   price,
   features,
   includes,
@@ -20,8 +16,46 @@ const SingleProductDetail = ({
   gallery,
   others,
 }) => {
-  const [product, setProduct] = useState(mainData);
+  const { id } = useParams();
   const [count, setCount] = useState(1);
+
+  let imageForScreen;
+  if (window.screen.width <= 414) {
+    imageForScreen = `${image.mobile}`;
+  } else if (window.screen.width < 800 && window.screen.width >= 415) {
+    imageForScreen = `${image.tablet}`;
+  } else {
+    imageForScreen = `${image.desktop}`;
+  }
+
+  console.log();
+
+  let galleryScreenSize;
+  if (window.screen.width <= 414) {
+    galleryScreenSize = `${gallery.first.mobile}`;
+  } else if (window.screen.width < 800) {
+    galleryScreenSize = `${gallery.first.tablet}`;
+  } else {
+    galleryScreenSize = `${gallery.first.desktop}`;
+  }
+
+  let galleryScreenSize2;
+  if (window.screen.width <= 414) {
+    galleryScreenSize2 = `${gallery.second.mobile}`;
+  } else if (window.screen.width < 800) {
+    galleryScreenSize2 = `${gallery.second.tablet}`;
+  } else {
+    galleryScreenSize2 = `${gallery.second.desktop}`;
+  }
+
+  let galleryScreenSize3;
+  if (window.screen.width <= 414) {
+    galleryScreenSize3 = `${gallery.third.mobile}`;
+  } else if (window.screen.width < 800) {
+    galleryScreenSize3 = `${gallery.third.tablet}`;
+  } else {
+    galleryScreenSize3 = `${gallery.third.desktop}`;
+  }
 
   if (count < 0) {
     setCount(0);
@@ -32,25 +66,30 @@ const SingleProductDetail = ({
   return (
     <Wrapper>
       <section className="section-center product-style-container">
-        <div className="catImageContainer">
-          <img src={image.mobile} alt={slug} className="catImage" />
-        </div>
-        <div className="productContent">
-          {/*<h3 className="">new product</h3>*/}
-          {/*isNew && <h3 className="">new product</h3>*/}
-          <h2>{name}</h2>
-          <p>{description}</p>
-          <h4>${price}</h4>
-          <div className="cartAdd">
-            <div className="amount">
-              <HiMinusSm onClick={() => setCount(count - 1)} />
-              <h4 className="count">{count}</h4>
-              <HiPlusSm onClick={() => setCount(count + 1)} />
-            </div>
-            <Link to="">
-              <button className="btn">add to cart</button>
-            </Link>
+        <article className="idInfo">
+          <div className="catImageContainer">
+            <img src={imageForScreen} alt={slug} className="catImage" />
           </div>
+          <div className="productContent">
+            {/*<h3 className="">new product</h3>*/}
+            {/*isNew && <h3 className="">new product</h3>*/}
+            <h2>{name}</h2>
+            <p>{description}</p>
+            <h4>${price}</h4>
+            <div className="cartAdd">
+              <div className="amount">
+                <HiMinusSm onClick={() => setCount(count - 1)} />
+                <h4 className="count">{count}</h4>
+                <HiPlusSm onClick={() => setCount(count + 1)} />
+              </div>
+              <Link to="">
+                <button className="btn">add to cart</button>
+              </Link>
+            </div>
+          </div>
+        </article>
+
+        <article className="featuresBox">
           <div className="features">
             <h4>Features</h4>
             <p className="feature-text">{features}</p>
@@ -66,32 +105,49 @@ const SingleProductDetail = ({
               );
             })}
           </div>
-          <div className="gallery">
+        </article>
+        <article className="gallery">
+          <div className="gallery1-2">
             <img
-              src={gallery.first.mobile}
+              src={galleryScreenSize}
               alt={slug}
-              className="gallery-img"
+              className="gallery-img gallery1"
             />
             <img
-              src={gallery.second.mobile}
+              src={galleryScreenSize2}
               alt={slug}
-              className="gallery-img"
-            />
-            <img
-              src={gallery.third.mobile}
-              alt={slug}
-              className="gallery-img"
+              className="gallery-img gallery2"
             />
           </div>
+          <div className="gallery-last">
+            <img
+              src={galleryScreenSize3}
+              alt={slug}
+              className="gallery-img gallery3"
+            />
+          </div>
+        </article>
 
-          <div className="extras">
-            <h4>you may also like</h4>
+        <article className="extras">
+          <h4>you may also like</h4>
+          <div className="extras-container">
             {others.map((other, index) => {
-              // console.log(other);
               const { slug, name, image } = other;
+              let imageSizeOthers;
+              if (window.screen.width <= 414) {
+                imageSizeOthers = `${image.mobile}`;
+              } else if (window.screen.width < 800) {
+                imageSizeOthers = `${image.tablet}`;
+              } else {
+                imageSizeOthers = `${image.desktop}`;
+              }
               return (
-                <div className="extras-content">
-                  <img src={image.mobile} alt={slug} className="extras-img" />
+                <div key={index} className="extras-content">
+                  <img
+                    src={imageSizeOthers}
+                    alt={slug}
+                    className="extras-img"
+                  />
                   <h4>{name}</h4>
                   <Link to={`/ProductDetail/${id}`}>
                     <button className="btn">SEE PRODUCT</button>
@@ -100,7 +156,7 @@ const SingleProductDetail = ({
               );
             })}
           </div>
-        </div>
+        </article>
       </section>
     </Wrapper>
   );
@@ -110,6 +166,9 @@ const Wrapper = styled.div`
 
   .product-style-container {
     margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .catImageContainer {
     height: 30rem;
@@ -122,10 +181,11 @@ const Wrapper = styled.div`
   }
   .catImage {
     align-self: center;
-    height: 25rem;
+    height: 100%;
     width: 100%;
     border-radius: var(--radius);
     margin: 0;
+    object-fit: cover;
   }
   .productContent {
     margin: 1rem auto;
@@ -170,7 +230,7 @@ const Wrapper = styled.div`
     margin: 4rem 0;
     h4 {
       text-transform: uppercase;
-      margin: 2rem 0 1rem 0;
+      margin: 0 0 1rem 0;
     }
     .quantity {
       color: var(--clr-primary-1);
@@ -179,7 +239,7 @@ const Wrapper = styled.div`
   }
 
   .gallery {
-    margin:3rem 0;
+    margin: 3rem 0;
     .gallery-img {
       width: 100%;
       border-radius: var(--radius);
@@ -189,13 +249,15 @@ const Wrapper = styled.div`
     text-align: center;
     margin: 2rem 0 10rem 0;
     .extras-img {
+      margin-bottom: 2rem;
       width: 100%;
+      border-radius: var(--radius);
     }
     h4 {
       letter-spacing: 2px;
       font-weight: 700;
       font-size: 1.4rem;
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
 
     .extras-content {
@@ -211,6 +273,113 @@ const Wrapper = styled.div`
   }
   .feature-text {
     line-height: 1.7;
+  }
+
+  @media (min-width: 414px) and (max-width: 991px) {
+    .extras {
+      margin: 3rem 0 0 0;
+    }
+
+    .extras-container {
+      display: flex;
+
+      .extras-img {
+        width: 90%;
+      }
+    }
+    .idInfo {
+      display: flex;
+
+      .catImageContainer {
+        flex: 2 1 40rem;
+      }
+      .productContent {
+        flex: 1 1 40rem;
+        margin: 3rem;
+        h4 {
+          padding: 1rem 0 1rem 0;
+        }
+        p {
+          margin: 1rem 0 1rem;
+        }
+      }
+
+      .catImage {
+        height: 100%;
+        width: 100%;
+      }
+      .cartAdd {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .extras-container {
+      display: flex;
+      justify-content: space-between;
+      .extras-img {
+        width: 90%;
+      }
+    }
+    .gallery {
+      display: flex;
+      min-height: 40vh;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .gallery1-2 {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        object-fit: cover;
+      }
+      .gallery3 {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .featuresBox {
+      display: flex;
+    }
+    .features {
+      flex: 2 1 40rem;
+      margin-right: 3rem;
+    }
+    .feature-text {
+      width: 90%;
+    }
+    .inTheBox {
+      flex: 1 1 20rem h4 {
+        margin: 0;
+      }
+    }
+    .idInfo {
+      display: flex;
+
+      .productContent {
+        margin: 5rem 3rem 3rem 5rem;
+        h4 {
+          padding: 1rem 0 1rem 0;
+        }
+        p {
+          margin: 1rem 0 1rem;
+        }
+      }
+
+      .catImage {
+        height: 100%;
+        width: 100%;
+      }
+      .cartAdd {
+        width: 70%;
+        justify-content: space-between;
+      }
+    }
+    .extras {
+      margin: 3rem 0 0 0;
+    }
   }
 `;
 export default SingleProductDetail;

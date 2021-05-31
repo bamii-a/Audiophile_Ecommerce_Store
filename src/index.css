@@ -38,10 +38,10 @@ Global Styles
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fff;
+  background: white;
 }
 ul {
   list-style-type: none;
@@ -117,24 +117,35 @@ p {
 }
 
 .btn {
-      background-color: var(--clr-primary-1);
-      display: inline-block;
-      cursor: pointer;
-      color: var(--clr-white);
-      font-size: 10px;
-      padding: 10px 20px;
-      text-decoration: none;
-      border: none;
-      text-transform: uppercase;
-      transition: var(--transition);
-      font-weight: 500;
+  background-color: var(--clr-primary-1);
+  display: inline-block;
+  cursor: pointer;
+  color: var(--clr-white);
+  font-size: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  text-transform: uppercase;
+  transition: var(--transition);
+  font-weight: 500;
 }
 .btn:hover {
-    background: var(--clr-primary-hover);
+  background: var(--clr-primary-hover);
 }
 
+@media (min-width: 414px) and (max-width: 991px) {
+  .btn {
+    font-size: 15px;
+    padding: 17px 30px;
+  }
+}
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 17px 30px;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import circles from "../assets/home/desktop/pattern-circles.svg";
 import speakerZX9 from "../assets/home/mobile/image-speaker-zx9.png";
 import speakerZX7_mobile from "../assets/home/mobile/image-speaker-zx7.jpg";
@@ -9,6 +9,7 @@ import earphonesYX1 from "../assets/home/mobile/image-earphones-yx1.jpg";
 import earphonesYX1_desktop from "../assets/home/desktop/image-earphones-yx1.jpg";
 
 const ProductLinks = () => {
+  const {id} = useParams()
   return (
     <Wrapper>
       <section className="productLinks-container section-center">
@@ -27,7 +28,7 @@ const ProductLinks = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link to="/speakers">
+            <Link to={`/ProductDetail/${id}`}>
               <button type="button" className="zx9-btn btn">
                 see product
               </button>
@@ -38,7 +39,7 @@ const ProductLinks = () => {
         <div className="speaker-ZX7-container">
           <div className="ZX7-contents">
             <h3>ZX7 SPEAKER</h3>
-            <Link to="/speakers">
+            <Link to={`/ProductDetail/${id}`}>
               <button type="button" className="zx7-btn btn">
                 see product
               </button>
@@ -52,7 +53,7 @@ const ProductLinks = () => {
 
           <div className="YX1-content">
             <h3>yx1 earphones</h3>
-            <Link to="/earphones">
+            <Link to={`/ProductDetail/${id}`}>
               <button type="button" className="yx1-btn btn">
                 see product
               </button>

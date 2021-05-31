@@ -12,12 +12,19 @@ const SpeakerCategory = ({
 }) => {
   let tempName = 'ZX7 Speaker';
 
-
+let imageForScreen;
+if (window.screen.width <= 414) {
+  imageForScreen = `${image.mobile}`;
+} else if (window.screen.width < 800) {
+  imageForScreen = `${image.tablet}`;
+} else {
+  imageForScreen = `${image.desktop}`;
+}
   return (
     <Wrapper>
       <section key={id} className={"section-center category-style-container"}>
         <div className="catImageContainer">
-          <img src={image.mobile} alt={slug} className="catImage" />
+          <img src={imageForScreen} alt={slug} className="catImage" />
         </div>
         <div className="productContent">
           {isNew && <h3 className="">new product</h3>}
@@ -36,10 +43,10 @@ const Wrapper = styled.div`
   text-align: center;
 
   .category-style-container {
-    margin: 2rem auto 4rem;
+    margin: 2rem auto 7rem;
   }
   .catImageContainer {
-    height: 30rem;
+    height: 100%;
     width: 95%;
     margin: 2rem auto 1rem;
     border-radius: var(--radius);
@@ -49,9 +56,10 @@ const Wrapper = styled.div`
   }
   .catImage {
     align-self: center;
-    height: 25rem;
+    height: 100%;
     width: 100%;
     border-radius: var(--radius);
+    object-fit: cover;
   }
   .productContent {
     padding: 10px;
@@ -67,7 +75,7 @@ const Wrapper = styled.div`
       text-transform: uppercase;
     }
     p {
-      width: 100%;
+      width: 90%;
       margin: 1rem auto 2rem;
       font-size: 0.9rem;
     }

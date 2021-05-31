@@ -11,11 +11,21 @@ const HeadphoneCategory = ({
   slug,
   new: isNew,
 }) => {
+
+  let imageForScreen;
+  if (window.screen.width <= 414) {
+    imageForScreen = `${image.mobile}`;
+  } else if (window.screen.width < 800 && window.screen.width >= 415) {
+    imageForScreen = `${image.tablet}`;
+  } else {
+    imageForScreen = `${image.desktop}`;
+  }
+  
   return (
     <Wrapper>
       <section key={id} className="section-center category-style-container">
         <div className="catImageContainer">
-          <img src={image.mobile} alt={slug} className="catImage" />
+          <img src={imageForScreen} alt={slug} className="catImage" />
         </div>
         <div className="productContent">
           {isNew && <h3 className="">new product</h3>}
@@ -37,7 +47,7 @@ const Wrapper = styled.div`
     margin: 2rem auto;
   }
   .catImageContainer {
-    height: 30rem;
+    height: 100%;
     width: 95%;
     margin: 1rem auto;
     border-radius: var(--radius);
@@ -47,9 +57,10 @@ const Wrapper = styled.div`
   }
   .catImage {
     align-self: center;
-    height: 25rem;
+    height: 100%;
     width: 100%;
     border-radius: var(--radius);
+    object-fit:cover;
   }
   .productContent {
     padding: 30px;
@@ -70,6 +81,7 @@ const Wrapper = styled.div`
       font-size: 0.9rem;
     }
   }
+
 
   @media (min-width: 992px) {
     .category-style-container {
