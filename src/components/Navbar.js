@@ -9,7 +9,6 @@ import navlinks from "../navlinks.json";
 import { FaAngleRight } from "react-icons/fa";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 
-import { CartPage } from '../components'
 import testImg from '../assets/product-xx59-headphones/mobile/image-product.jpg'
 
 const Navbar = () => {
