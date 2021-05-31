@@ -394,7 +394,7 @@ const Wrapper = styled.nav`
         }
         a {
           color: var(--clr-white);
-          font-size: 1.2rem;
+          font-size: 1rem;
           text-transform: capitalize;
           letter-spacing: var(--spacing);
           padding: 0.5rem;

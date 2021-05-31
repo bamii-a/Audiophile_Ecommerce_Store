@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.99edef17.chunk.css",
+    "main.js": "/static/js/main.4fb785f1.chunk.js",
+    "main.js.map": "/static/js/main.4fb785f1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.52f00217.js",
+    "runtime-main.js.map": "/static/js/runtime-main.52f00217.js.map",
+    "static/js/2.d89d7466.chunk.js": "/static/js/2.d89d7466.chunk.js",
+    "static/js/2.d89d7466.chunk.js.map": "/static/js/2.d89d7466.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.99edef17.chunk.css.map": "/static/css/main.99edef17.chunk.css.map",
+    "static/js/2.d89d7466.chunk.js.LICENSE.txt": "/static/js/2.d89d7466.chunk.js.LICENSE.txt",
+    "static/media/icon-cart.5e1893a6.svg": "/static/media/icon-cart.5e1893a6.svg",
+    "static/media/icon-facebook.e9773e52.svg": "/static/media/icon-facebook.e9773e52.svg",
+    "static/media/icon-hamburger.f8a9f0cf.svg": "/static/media/icon-hamburger.f8a9f0cf.svg",
+    "static/media/icon-instagram.8d0df555.svg": "/static/media/icon-instagram.8d0df555.svg",
+    "static/media/icon-twitter.5dc7711f.svg": "/static/media/icon-twitter.5dc7711f.svg",
+    "static/media/image-best-gear.4d4a28e9.jpg": "/static/media/image-best-gear.4d4a28e9.jpg",
+    "static/media/image-earphones-yx1.48e16a44.jpg": "/static/media/image-earphones-yx1.48e16a44.jpg",
+    "static/media/image-header.d200a358.jpg": "/static/media/image-header.d200a358.jpg",
+    "static/media/image-hero.55c18e98.jpg": "/static/media/image-hero.55c18e98.jpg",
+    "static/media/image-speaker-zx7.3d4940e8.jpg": "/static/media/image-speaker-zx7.3d4940e8.jpg",
+    "static/media/image-speaker-zx7.82dc33d6.jpg": "/static/media/image-speaker-zx7.82dc33d6.jpg",
+    "static/media/image-speaker-zx9.97769f2f.png": "/static/media/image-speaker-zx9.97769f2f.png",
+    "static/media/logo.e03974f8.svg": "/static/media/logo.e03974f8.svg",
+    "static/media/pattern-circles.f4df3610.svg": "/static/media/pattern-circles.f4df3610.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.52f00217.js",
+    "static/js/2.d89d7466.chunk.js",
+    "static/css/main.99edef17.chunk.css",
+    "static/js/main.4fb785f1.chunk.js"
+  ]
+}
