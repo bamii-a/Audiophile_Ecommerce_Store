@@ -1,4 +1,5 @@
 # Audiophile e-commerce website
+![screenshot](https://user-images.githubusercontent.com/75247512/120127332-6c034500-c1bf-11eb-9653-6d9f87e238d7.jpg)
 
 **PROJECT_IS_76%_DONE**
 
