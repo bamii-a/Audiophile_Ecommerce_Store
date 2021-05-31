@@ -1,8 +1,13 @@
 # Audiophile e-commerce website
+![screenshot](https://user-images.githubusercontent.com/75247512/120127332-6c034500-c1bf-11eb-9653-6d9f87e238d7.jpg)
 
 **PROJECT_IS_76%_DONE**
 
+<<<<<<< HEAD
 git 
+=======
+(AudiophileEcommerce)[https://bamii-audiophile-ecommerce-store.netlify.app/]
+>>>>>>> f00232b4f4bb5394f43217de2c680ce6184ed6cb
 This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
 
 
