@@ -2,7 +2,6 @@ import React, { useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import { useParams, Link } from "react-router-dom";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
-import Extras from "../components";
 
 const SingleProductDetail = ({
   name,
