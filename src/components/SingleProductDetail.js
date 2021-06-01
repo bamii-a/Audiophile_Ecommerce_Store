@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 
 const SingleProductDetail = ({
+  id,
   name,
   slug,
   image,
@@ -15,7 +16,6 @@ const SingleProductDetail = ({
   gallery,
   others,
 }) => {
-  const { id } = useParams();
   const [count, setCount] = useState(1);
 
   let imageForScreen;
@@ -32,7 +32,7 @@ const SingleProductDetail = ({
   let galleryScreenSize;
   if (window.screen.width <= 414) {
     galleryScreenSize = `${gallery.first.mobile}`;
-  } else if (window.screen.width < 800) {
+  } else if (window.screen.width < 800 && window.screen.width >= 415) {
     galleryScreenSize = `${gallery.first.tablet}`;
   } else {
     galleryScreenSize = `${gallery.first.desktop}`;
@@ -41,7 +41,7 @@ const SingleProductDetail = ({
   let galleryScreenSize2;
   if (window.screen.width <= 414) {
     galleryScreenSize2 = `${gallery.second.mobile}`;
-  } else if (window.screen.width < 800) {
+  } else if (window.screen.width < 800 && window.screen.width >= 415) {
     galleryScreenSize2 = `${gallery.second.tablet}`;
   } else {
     galleryScreenSize2 = `${gallery.second.desktop}`;
@@ -50,14 +50,14 @@ const SingleProductDetail = ({
   let galleryScreenSize3;
   if (window.screen.width <= 414) {
     galleryScreenSize3 = `${gallery.third.mobile}`;
-  } else if (window.screen.width < 800) {
+  } else if (window.screen.width < 800 && window.screen.width >= 415) {
     galleryScreenSize3 = `${gallery.third.tablet}`;
   } else {
     galleryScreenSize3 = `${gallery.third.desktop}`;
   }
 
-  if (count < 0) {
-    setCount(0);
+  if (count < 1) {
+    setCount(1);
   }
 
   // const { mobile, desktop, tablet } = image;
@@ -131,11 +131,11 @@ const SingleProductDetail = ({
           <h4>you may also like</h4>
           <div className="extras-container">
             {others.map((other, index) => {
-              const { slug, name, image } = other;
+              const { slug, name, image, id } = other;
               let imageSizeOthers;
               if (window.screen.width <= 414) {
                 imageSizeOthers = `${image.mobile}`;
-              } else if (window.screen.width < 800) {
+              } else if (window.screen.width < 800 && window.screen.width >= 415) {
                 imageSizeOthers = `${image.tablet}`;
               } else {
                 imageSizeOthers = `${image.desktop}`;
@@ -274,7 +274,7 @@ const Wrapper = styled.div`
     line-height: 1.7;
   }
 
-  @media (min-width: 414px) and (max-width: 991px) {
+  @media (min-width: 415px) and (max-width: 991px) {
     .extras {
       margin: 3rem 0 0 0;
     }
@@ -288,13 +288,14 @@ const Wrapper = styled.div`
     }
     .idInfo {
       display: flex;
+      flex-wrap:wrap;
 
       .catImageContainer {
         flex: 2 1 40rem;
       }
       .productContent {
         flex: 1 1 40rem;
-        margin: 3rem;
+        margin: 0;
         h4 {
           padding: 1rem 0 1rem 0;
         }

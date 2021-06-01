@@ -80,6 +80,34 @@ const Wrapper = styled.div`
       font-size: 0.9rem;
     }
   }
+  @media (min-width: 415px) and (max-width: 991px) {
+    .category-style-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .catImageContainer {
+      margin-right: 2rem;
+      .catImage {
+        height: 30rem;
+      }
+    }
+    .productContent {
+      text-align: center;
+
+      h2 {
+        margin: 1rem auto;
+      }
+      p {
+        width: 80%;
+        margin: 1rem auto 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
   @media (min-width: 992px) {
     .category-style-container {
       display: flex;

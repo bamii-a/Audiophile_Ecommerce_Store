@@ -60,7 +60,7 @@ const Wrapper = styled.div`
     height: 100%;
     width: 100%;
     border-radius: var(--radius);
-    object-fit:cover;
+    object-fit: cover;
   }
   .productContent {
     padding: 30px;
@@ -78,10 +78,37 @@ const Wrapper = styled.div`
     p {
       width: 100%;
       margin: 1rem auto 2rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   }
 
+  @media (min-width: 415px) and (max-width: 991px) {
+    .category-style-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .catImageContainer {
+      margin-right: 2rem;
+      .catImage {
+        height: 30rem;
+      }
+    }
+    .productContent {
+      text-align: center;
+
+      h2 {
+        margin: 1rem auto;
+      }
+      p {
+        width: 80%;
+        margin: 1rem auto 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
 
   @media (min-width: 992px) {
     .category-style-container {

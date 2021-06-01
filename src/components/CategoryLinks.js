@@ -35,29 +35,31 @@ const Wrapper = styled.div`
   text-align: center;
   .categoryLinks-container {
     width: 100%;
-    min-height: 50vh;
-    border-radius: var();
+    min-height: 45vh;
   }
   .item-container {
+    display: flex;
+    justify-content: center;
     position: relative;
     z-index: 1;
     width: 90vw;
-    margin: 4rem auto;
+    margin: 2rem auto;
     height: 10rem;
     background: var(--clr-primary-4);
     border-radius: var(--radius);
     img {
       width: 10rem;
       position: absolute;
-      top: -30%;
-      left: 35%;
-      transform: translate(-10%, -5%);
+      top: -20%;
     }
     .item-container-text {
-      padding-top: 5.5rem;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
       h4 {
         text-transform: uppercase;
-        font-size: 1.2rem;
+        font-size: 0.85rem;
       }
       h5 {
         font-weight: 900;
@@ -84,7 +86,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 414px) and (max-width: 991px) {
+  @media (min-width: 415px) and (max-width: 991px) {
     .categoryLinks-container {
       display: flex;
       justify-content: space-between;
@@ -92,11 +94,11 @@ const Wrapper = styled.div`
       margin: 0 auto;
 
       .item-container {
-        width: 30%;
-        height: 100%;
+        margin: 0 0.5rem 0;
+        height: 10rem;
 
         img {
-          width: 70%;
+          width: 10rem;
           left: 50%;
           transform: translate(-50%);
         }

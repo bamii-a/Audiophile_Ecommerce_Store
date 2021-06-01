@@ -53,7 +53,7 @@
       }
     },
     "others": [
-      {
+      { "id":3,
         "slug": "xx99-mark-one-headphones",
         "name": "XX99 Mark I",
         "image": {
@@ -62,7 +62,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198361/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-one-headphones_l0ivjp.jpg"
         }
       },
-      {
+      { "id":2,
         "slug": "xx59-headphones",
         "name": "XX59",
         "image": {
@@ -71,7 +71,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198360/Audiophile%20Images/assets/shared/desktop/image-xx59-headphones_ozokle.jpg"
         }
       },
-      {
+      { "id":6,
         "slug": "zx9-speaker",
         "name": "ZX9 Speaker",
         "image": {
@@ -132,7 +132,7 @@
       }
     },
     "others": [
-      {
+      {"id":4,
         "slug": "xx99-mark-two-headphones",
         "name": "XX99 Mark II",
         "image": {
@@ -141,7 +141,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198359/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-two-headphones_aytf5d.jpg"
         }
       },
-      {
+      {"id":3,
         "slug": "xx99-mark-one-headphones",
         "name": "XX99 Mark I",
         "image": {
@@ -150,7 +150,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198361/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-one-headphones_l0ivjp.jpg"
         }
       },
-      {
+      {"id":6,
         "slug": "zx9-speaker",
         "name": "ZX9 Speaker",
         "image": {
@@ -211,7 +211,7 @@
       }
     },
     "others": [
-      {
+      {"id":4,
         "slug": "xx99-mark-two-headphones",
         "name": "XX99 Mark II",
         "image": {
@@ -220,7 +220,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198359/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-two-headphones_aytf5d.jpg"
         }
       },
-      {
+      {"id":2,
         "slug": "xx59-headphones",
         "name": "XX59",
         "image": {
@@ -229,7 +229,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198360/Audiophile%20Images/assets/shared/desktop/image-xx59-headphones_ozokle.jpg"
         }
       },
-      {
+      {"id":6,
         "slug": "zx9-speaker",
         "name": "ZX9 Speaker",
         "image": {
@@ -294,7 +294,7 @@
       }
     },
     "others": [
-      {
+      {"id":3,
         "slug": "xx99-mark-one-headphones",
         "name": "XX99 Mark I",
         "image": {
@@ -303,7 +303,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198361/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-one-headphones_l0ivjp.jpg"
         }
       },
-      {
+      {"id":2,
         "slug": "xx59-headphones",
         "name": "XX59",
         "image": {
@@ -312,7 +312,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198360/Audiophile%20Images/assets/shared/desktop/image-xx59-headphones_ozokle.jpg"
         }
       },
-      {
+      {"id":6,
         "slug": "zx9-speaker",
         "name": "ZX9 Speaker",
         "image": {
@@ -377,7 +377,7 @@
       }
     },
     "others": [
-      {
+      {"id":6,
         "slug": "zx9-speaker",
         "name": "ZX9 Speaker",
         "image": {
@@ -386,7 +386,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198361/Audiophile%20Images/assets/shared/desktop/image-zx9-speaker_x8erbt.jpg"
         }
       },
-      {
+      {"id":3,
         "slug": "xx99-mark-one-headphones",
         "name": "XX99 Mark I",
         "image": {
@@ -395,7 +395,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198361/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-one-headphones_l0ivjp.jpg"
         }
       },
-      {
+      {"id":2,
         "slug": "xx59-headphones",
         "name": "XX59",
         "image": {
@@ -460,7 +460,7 @@
       }
     },
     "others": [
-      {
+      {"id":5,
         "slug": "zx7-speaker",
         "name": "ZX7 Speaker",
         "image": {
@@ -469,7 +469,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198359/Audiophile%20Images/assets/shared/desktop/image-zx7-speaker_eqkjav.jpg"
         }
       },
-      {
+      {"id":3,
         "slug": "xx99-mark-one-headphones",
         "name": "XX99 Mark I",
         "image": {
@@ -478,7 +478,7 @@
           "desktop": "https://res.cloudinary.com/bamii/image/upload/v1622198361/Audiophile%20Images/assets/shared/desktop/image-xx99-mark-one-headphones_l0ivjp.jpg"
         }
       },
-      {
+      {"id":2,
         "slug": "xx59-headphones",
         "name": "XX59",
         "image": {

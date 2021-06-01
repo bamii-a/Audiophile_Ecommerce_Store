@@ -16,8 +16,8 @@ const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
   const [count, setCount] = useState(1);
 
-  if (count < 0) {
-    setCount(0);
+  if (count < 1) {
+    setCount(1);
   }
 
   return (
@@ -43,7 +43,7 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <Link to="/cart" onClick={() => setShowCart(!showCart)}>
+          <Link to="" onClick={() => setShowCart(!showCart)}>
             <div className="cart-container">
               <img src={cartIcon} alt="cart" className="cart" />
               <span className="cart-value">8</span>
@@ -175,9 +175,9 @@ const Wrapper = styled.nav`
     transition: var(--transition);
     font-weight: 500;
   }
-  .cart-heading{
-    h4{
-      text-transform:uppercase;
+  .cart-heading {
+    h4 {
+      text-transform: uppercase;
     }
   }
   .cart-contents {
@@ -192,16 +192,16 @@ const Wrapper = styled.nav`
     width: 30%;
     border-radius: var(--radius);
   }
-  .cartItemNamePriceImg{
-    display:flex;
-    justify-contents:flex-start;
-    align-items:center;
-    width:60%;
+  .cartItemNamePriceImg {
+    display: flex;
+    justify-contents: flex-start;
+    align-items: center;
+    width: 60%;
   }
-  .cartItemNamePrice{
+  .cartItemNamePrice {
     margin: 1rem;
-      h4{
-      margin:0;
+    h4 {
+      margin: 0;
     }
   }
   .cart-details {
@@ -329,9 +329,9 @@ const Wrapper = styled.nav`
     img {
       width: 7rem;
       position: absolute;
-      top: -25%;
-      left: 35%;
-      transform: translate(-15%);
+      top: -20%;
+      left: 50%;
+      transform: translate(-50%);
     }
     .item-container-text {
       padding-top: 3.5rem;

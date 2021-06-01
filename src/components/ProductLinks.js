@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
 import circles from "../assets/home/desktop/pattern-circles.svg";
@@ -8,8 +8,10 @@ import speakerZX7_desktop from "../assets/home/desktop/image-speaker-zx7.jpg";
 import earphonesYX1 from "../assets/home/mobile/image-earphones-yx1.jpg";
 import earphonesYX1_desktop from "../assets/home/desktop/image-earphones-yx1.jpg";
 
-const ProductLinks = () => {
-  const {id} = useParams()
+const ProductLinks = ({ data }) => {
+  
+  const { id } = useParams()
+  // console.log(id);
   return (
     <Wrapper>
       <section className="productLinks-container section-center">
@@ -84,15 +86,24 @@ const Wrapper = styled.div`
     /* SPEAKER ZX9 */
   }
   .speaker-ZX9-container {
-    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background: var(--clr-primary-1);
     border-radius: var(--radius);
     position: relative;
 
     .img-container {
-      min-height: 35vh;
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto 2rem;
     }
 
+    .content-container {
+      margin: 1rem auto 2rem;
+    }
     h3 {
       color: white;
       text-align: center;
@@ -110,10 +121,6 @@ const Wrapper = styled.div`
     }
     .speakerZX9-img {
       width: 35%;
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translate(-50%, 10%);
     }
 
     .zx9-btn {
@@ -221,23 +228,24 @@ const Wrapper = styled.div`
     .earphones-YX1-container {
       min-height: 35vh;
       display: flex;
+
       width: 100%;
     }
 
     .earphones-YX1-image {
       width: 40rem;
-      height: 30vh;
-      margin: 2rem 2.5rem 2rem 0;
+      margin: 1rem 1rem 1rem 0;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       object-fit: cover;
     }
     .YX1-content {
-      width: 40vw;
-      height: 30vh;
-      margin: 2rem 0 2rem 2.5rem;
-      padding: 7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1rem;
+      padding: 2rem;
     }
   }
   .yx1-btn,

@@ -8,6 +8,7 @@ import {
   ProductDetail,
   Headphones,
   Speakers,
+  Error,
   hr,
   Checkout,
 } from "./pages";
@@ -30,12 +31,11 @@ function App() {
         <Route exact path="/speakers">
           <Speakers />
         </Route>
-        <Route
-          exact
-          path="/ProductDetail/:id"
-          children={<ProductDetail />}
-        />
-        </Switch>
+        <Route exact path="/ProductDetail/:id" children={<ProductDetail />} />
+        <Route exact path="*">
+          <Error />
+  </Route>
+      </Switch>
       <PreFooter />
       <Footer />
     </Router>

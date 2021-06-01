@@ -56,7 +56,7 @@ const Wrapper = styled.div`
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas: "box1 box2";
       .column-two {
-        margin: 0 0 0 5rem;
+        margin: 0 0 0 1rem;
         grid-area: box2;
       }
       .column-one {
@@ -73,7 +73,7 @@ const Wrapper = styled.div`
         }
       }
       p {
-        width: 80%;
+        width: 90%;
         margin: 0;
         line-height: 1.7;
       }
