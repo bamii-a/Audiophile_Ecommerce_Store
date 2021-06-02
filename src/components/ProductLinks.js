@@ -132,7 +132,7 @@ const Wrapper = styled.div`
       width: 100%;
     }
     .speakerZX9-img {
-      width: 35%;
+      width: 90%;
     }
 
     .zx9-btn {
@@ -196,18 +196,42 @@ const Wrapper = styled.div`
     }
   }
 
+  @media (min-width: 415px) and (max-width: 992px) {
+    .earphones-YX1-container {
+      display: flex;
+      width: 100%;
+      flex-wrap:wrap;
+    }
+    .earphones-YX1-image {
+    
+  }
+  .YX1-content {
+    padding: 1rem;
+    margin: 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    h3{
+      font-size:1.3rem;
+    }
+  }
+  }
+
   @media (min-width: 992px) {
     .speaker-ZX9-container {
       min-height: 35rem;
       margin: 2rem auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      position: relative;
 
       .speakerZX9-img {
         position: absolute;
-        width: 25%;
+        width: 20rem;
         top: 20%;
-        left: 20%;
+        left: 25%;
+        transform: translate(-35%);
       }
       .content-container {
         display: flex;
