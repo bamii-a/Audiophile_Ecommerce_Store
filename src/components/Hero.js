@@ -55,7 +55,7 @@ const Wrapper = styled.div`
     align-items: center;
 
     .hero-background {
-      position: fixed ;
+      position: sticky;
       z-index: -1;
       width: 100%;
       height: 100%;
