@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 
-const Error = () => {
+const ErrorPage = () => {
     return (
       <Wrapper className="section section-center">
-        <h4>Error loading</h4>
+        <h4>Error loading Page</h4>
         <Link to="/" className="btn">
           go back home
         </Link>
@@ -28,4 +28,4 @@ text-align:center;
 display:grid;
 gap:1rem;
 `
-export default Error
+export default ErrorPage

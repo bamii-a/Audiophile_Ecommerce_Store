@@ -3,11 +3,23 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import heroBackgroundMobile from "../assets/home/mobile/image-header.jpg";
 import heroBackgroundDesktop from "../assets/home/desktop/image-hero.jpg";
+import heroBackgroundTablet from "../assets/home/tablet/image-header.jpg";
 
 const Hero = () => {
+
+  let imageForScreen;
+  if (window.screen.width <= 414) {
+    imageForScreen = `${heroBackgroundMobile}`;
+  } else if (window.screen.width >= 415 && window.screen.width === 991) {
+    imageForScreen = `${heroBackgroundTablet}`;
+  } else {
+    imageForScreen = `${heroBackgroundDesktop}`;
+  }
+
   return (
     <Wrapper>
       <section className="hero">
+        <img src={imageForScreen} alt="" className="hero-background" />
         <div className="hero-content">
           <h5>new product</h5>
           <h2>
@@ -34,26 +46,23 @@ const Wrapper = styled.div`
     color: var(--clr-primary-3);
   }
 
-  .hero-img {
-    display: none;
-  }
   .hero {
-    height: 90vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
-      url(${heroBackgroundMobile});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    object-fit: cover;
-    width: 100%;
+    position: relative;
+    height: 100vh;
     margin-top: 0px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .hero-content {
-      
+    .hero-background {
+      position: fixed ;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    hero-content {
       align-self: center;
     }
     h5 {
@@ -85,15 +94,18 @@ const Wrapper = styled.div`
     .hero {
       width: 100%;
       min-height: 90vh;
-      background: url(${heroBackgroundDesktop});
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       object-fit: cover;
       display: flex;
       justify-content: center;
       align-item: center;
+      position: relative;
+    }
+    .hero-background {
+      position: absolute !important;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .hero-content {
       width: 90vw;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { backToTop } from "../utility/helpers";
 
 const SpeakerCategory = ({
   name,
@@ -31,7 +32,9 @@ if (window.screen.width <= 414) {
           {<h2>{name}</h2>}
           <p>{description}</p>
           <Link to={`/ProductDetail/${id}`}>
-            <button className="btn">see product</button>
+            <button className="btn" onClick={() => backToTop()}>
+              see product
+            </button>
           </Link>
         </div>
       </section>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import data from "../menu.json";
 import { FaAngleRight } from "react-icons/fa";
+import { backToTop } from "../utility/helpers";
 
 const CategoryLinks = () => {
   return (
@@ -15,12 +16,12 @@ const CategoryLinks = () => {
               <div className="item-container-text">
                 <Link to={url} className="link-to-category">
                   <h4>{category}</h4>
-                  <h5>
+                  <button className='shopBtn' onClick={()=> backToTop()}>
                     shop
                     <span className="icon">
                       <FaAngleRight />
                     </span>
-                  </h5>
+                  </button>
                 </Link>
               </div>
             </div>
@@ -43,7 +44,7 @@ const Wrapper = styled.div`
     position: relative;
     z-index: 1;
     width: 90vw;
-    margin: 2rem auto;
+    margin: 3rem auto;
     height: 10rem;
     background: var(--clr-primary-4);
     border-radius: var(--radius);
@@ -61,15 +62,19 @@ const Wrapper = styled.div`
         text-transform: uppercase;
         font-size: 0.85rem;
       }
-      h5 {
+      .shopBtn {
         font-weight: 900;
+        font-size: 1rem;
         text-transform: uppercase;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: none;
+        margin: 0.7rem auto;
+        background: transparent;
       }
       .link-to-category {
-        h5 {
+        .shopBtn {
           color: var(--clr-primary-1);
         }
         h4 {

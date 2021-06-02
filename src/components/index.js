@@ -9,6 +9,8 @@ import HeadphoneCategory from "./HeadphoneCategory";
 import hr from "./hr";
 import SingleProductDetail from "./SingleProductDetail";
 import CartPage from "./CartPage";
+import Loading from "./Loading";
+import Error from "./Loading";
 
 export {
   Footer,
@@ -22,4 +24,6 @@ export {
   SpeakerCategory,
   HeadphoneCategory,
   CartPage,
+  Loading,
+  Error
 };

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
+import { backToTop } from "../utility/helpers";
+
 
 const SingleProductDetail = ({
   id,
@@ -60,6 +62,8 @@ const SingleProductDetail = ({
     setCount(1);
   }
 
+
+  
   // const { mobile, desktop, tablet } = image;
   // console.log(mobile);
   return (
@@ -149,7 +153,9 @@ const SingleProductDetail = ({
                   />
                   <h4>{name}</h4>
                   <Link to={`/ProductDetail/${id}`}>
-                    <button className="btn">SEE PRODUCT</button>
+                    <button className="btn" onClick={() => backToTop()}>
+                      SEE PRODUCT
+                    </button>
                   </Link>
                 </div>
               );
@@ -162,7 +168,6 @@ const SingleProductDetail = ({
 };
 const Wrapper = styled.div`
   text-align: left;
-
   .product-style-container {
     margin: 1rem auto;
     display: flex;
@@ -172,7 +177,7 @@ const Wrapper = styled.div`
   .catImageContainer {
     height: 30rem;
     width: 95%;
-    margin: 1rem auto 1rem 0;
+    margin: 1rem auto 1rem;
     border-radius: var(--radius);
     display: flex;
     justify-content: center;
@@ -246,7 +251,7 @@ const Wrapper = styled.div`
   }
   .extras {
     text-align: center;
-    margin: 2rem 0 10rem 0;
+    margin: 1rem 0 1rem 0;
     .extras-img {
       margin-bottom: 2rem;
       width: 100%;
@@ -260,7 +265,7 @@ const Wrapper = styled.div`
     }
 
     .extras-content {
-      margin: 3rem 0 5rem 0;
+      margin: 1rem 0 2rem 0;
     }
   }
   .features {
@@ -275,6 +280,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 415px) and (max-width: 991px) {
+    margin-top: 5rem;
     .extras {
       margin: 3rem 0 0 0;
     }
@@ -288,7 +294,7 @@ const Wrapper = styled.div`
     }
     .idInfo {
       display: flex;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
 
       .catImageContainer {
         flex: 2 1 40rem;
@@ -315,6 +321,7 @@ const Wrapper = styled.div`
     }
   }
   @media (min-width: 992px) {
+    margin-top: 7rem;
     .extras-container {
       display: flex;
       justify-content: space-between;

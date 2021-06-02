@@ -7,7 +7,7 @@ const prefooter = () => {
     <Wrapper>
       <article className="section-center prefooter-container">
         <div className="column-two">
-          <img src={image} alt="image" className="image" />
+          <img src={image} alt="image" className="image"/>
         </div>
         <div className="column-one">
           <h3>

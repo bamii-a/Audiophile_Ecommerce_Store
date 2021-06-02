@@ -8,8 +8,9 @@ import cartIcon from "../assets/shared/desktop/icon-cart.svg";
 import navlinks from "../navlinks.json";
 import { FaAngleRight } from "react-icons/fa";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
-
+import {useGlobalCartContext} from '../context/CartContext'
 import testImg from '../assets/product-xx59-headphones/mobile/image-product.jpg'
+import { backToTop } from "../utility/helpers";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -43,12 +44,14 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <Link to="" onClick={() => setShowCart(!showCart)}>
-            <div className="cart-container">
-              <img src={cartIcon} alt="cart" className="cart" />
-              <span className="cart-value">8</span>
-            </div>
-          </Link>
+
+          <div
+            className="cart-container"
+            onClick={() => setShowCart(!showCart)}
+          >
+            <img src={cartIcon} alt="cart" className="cart" />
+            <span className="cart-value">8</span>
+          </div>
         </div>
 
         <div className={`${showLinks ? "sidebar show-sidebar" : "sidebar"}`}>
@@ -63,7 +66,7 @@ const Navbar = () => {
                     className="link-to-category"
                     onClick={() => setShowLinks(!showLinks)}
                   >
-                    <h5>
+                    <h5 onClick={() => backToTop()}>
                       shop
                       <span className="icon">
                         <FaAngleRight />
@@ -75,7 +78,9 @@ const Navbar = () => {
             );
           })}
         </div>
-        <section className={`${showCart ? "show-overlay overlay " : "overlay"}`}>
+        <section
+          className={`${showCart ? "show-overlay overlay " : "overlay"}`}
+        >
           <article className={`${showCart ? "show-cart cartDiv " : "cartDiv"}`}>
             <div className="cart-contents">
               <div className="cart-heading">
@@ -89,12 +94,11 @@ const Navbar = () => {
               </div>
               <div className="cart-details">
                 <div className="item-card">
-                <div className="cartItemNamePriceImg">
-                <img src={testImg} alt="name" className="cart-Item-Img" />
+                  <div className="cartItemNamePriceImg">
+                    <img src={testImg} alt="name" className="cart-Item-Img" />
                     <div className="cartItemNamePrice">
-                    
-                    <h4>NAME</h4>
-                    <h4>PRICE</h4>
+                      <h4>NAME</h4>
+                      <h4>PRICE</h4>
                     </div>
                   </div>
 
@@ -103,14 +107,14 @@ const Navbar = () => {
                     <h4 className="count">{count}</h4>
                     <HiPlusSm onClick={() => setCount(count + 1)} />
                   </div>
-                </div>                
+                </div>
               </div>
               <div className="total">
                 <h4>total</h4>
                 <h4>$599</h4>
               </div>
-              <Link to='/'>
-              <button className='btn checkoutBtn'>Checkout</button>
+              <Link to="/">
+                <button className="btn checkoutBtn">Checkout</button>
               </Link>
             </div>
           </article>
@@ -124,6 +128,10 @@ const Wrapper = styled.nav`
   background: var(--clr-primary-2);
   display: flex;
   align-items: center;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 2;
   .overlay {
     position: fixed;
     top: 0;
@@ -168,16 +176,18 @@ const Wrapper = styled.nav`
     cursor: pointer;
     color: var(--clr-black);
     font-size: 10px;
-    padding: 10px 20px;
     text-decoration: none;
     border: none;
     text-transform: uppercase;
     transition: var(--transition);
     font-weight: 500;
+    font-size: 15px;
   }
   .cart-heading {
     h4 {
+      font-size: 20px;
       text-transform: uppercase;
+      margin: 0;
     }
   }
   .cart-contents {
@@ -217,7 +227,7 @@ const Wrapper = styled.nav`
     margin: 2rem 0;
   }
   .amount {
-    width: 35%;
+    width: 6rem;
     height: 2.5rem;
     display: flex;
     justify-content: space-between;
@@ -360,6 +370,11 @@ const Wrapper = styled.nav`
 
   @media (min-width: 992px) {
     height: 8vh;
+    .cartDiv {
+      width: 30%;
+      margin: 0 0 0 60rem;
+    }
+
     .sidebar {
       visibility: hidden;
     }

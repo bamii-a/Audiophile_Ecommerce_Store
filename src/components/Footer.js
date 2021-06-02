@@ -5,6 +5,7 @@ import logo from "../assets/shared/desktop/logo.svg";
 import facebookIcon from "../assets/shared/desktop/icon-facebook.svg";
 import InstagramIcon from "../assets/shared/desktop/icon-instagram.svg";
 import TwitterIcon from "../assets/shared/desktop/icon-twitter.svg";
+import { backToTop } from "../utility/helpers";
 
 const Footer = () => {
   return (
@@ -18,13 +19,19 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/Headphones">Headphones</Link>
+              <Link to="/Headphones" onClick={() => backToTop()}>
+                Headphones
+              </Link>
             </li>
             <li>
-              <Link to="/Speakers">Speakers</Link>
+              <Link to="/Speakers" onClick={() => backToTop()}>
+                Speakers
+              </Link>
             </li>
             <li>
-              <Link to="/Earphones">Earphones</Link>
+              <Link to="/Earphones" onClick={() => backToTop()}>
+                Earphones
+              </Link>
             </li>
           </ul>
         </div>

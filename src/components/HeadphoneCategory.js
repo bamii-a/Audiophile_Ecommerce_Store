@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { backToTop } from "../utility/helpers";
 
 
 const HeadphoneCategory = ({
@@ -32,7 +33,7 @@ const HeadphoneCategory = ({
           <h2>{name}</h2>
           <p>{description}</p>
           <Link to={`/ProductDetail/${id}`}>
-            <button className="btn">see product</button>
+            <button className="btn" onClick={()=>backToTop()}>see product</button>
           </Link>
         </div>
       </section>

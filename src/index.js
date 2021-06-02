@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {GlobalProvider} from './context/GlobalContext'
+import {CartProvider} from './context/CartContext'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <GlobalProvider>
+    <CartProvider>
     <App />
-  </React.StrictMode>,
+    </CartProvider>
+  </GlobalProvider>,
   document.getElementById('root')
 );
 

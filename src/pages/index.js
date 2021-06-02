@@ -4,6 +4,6 @@ import Headphones from "./Headphones";
 import Speakers from "./Speakers";
 import ProductDetail from "./ProductDetail";
 import Checkout from "./CheckoutPage";
-import Error from "./Error";
+import ErrorPage from "./ErrorPage";
 
-export { HomePage, Earphones, ProductDetail, Error, Headphones, Speakers, Checkout };
+export { HomePage, Earphones, ProductDetail, ErrorPage, Headphones, Speakers, Checkout };
