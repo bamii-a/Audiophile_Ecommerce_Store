@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 
   .hero {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     margin-top: 0px;
     display: flex;
     justify-content: center;
