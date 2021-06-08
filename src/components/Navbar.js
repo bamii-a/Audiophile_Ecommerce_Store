@@ -7,19 +7,14 @@ import logo from "../assets/shared/desktop/logo.svg";
 import cartIcon from "../assets/shared/desktop/icon-cart.svg";
 import navlinks from "../navlinks.json";
 import { FaAngleRight } from "react-icons/fa";
-import { HiMinusSm, HiPlusSm } from "react-icons/hi";
-import {useGlobalCartContext} from '../context/CartContext'
-import testImg from '../assets/product-xx59-headphones/mobile/image-product.jpg'
+import { Cart } from "../components";
+import { useGlobalCartContext } from "../context/CartContext";
+import { useCartContext } from "../context/CartContext";
 import { backToTop } from "../utility/helpers";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
-  const [showCart, setShowCart] = useState(false);
-  const [count, setCount] = useState(1);
-
-  if (count < 1) {
-    setCount(1);
-  }
+  const { showCart, setShowCart, total_items } = useCartContext()
 
   return (
     <Wrapper>
@@ -32,7 +27,7 @@ const Navbar = () => {
           >
             <img src={hamburger} alt="menu" className="hamburger" />
           </button>
-          <Link to="/">
+          <Link to="/" onClick={() => setShowLinks(false)}>
             <img src={logo} alt="logo" className="logo" />
           </Link>
           <ul className="nav-links">
@@ -44,13 +39,12 @@ const Navbar = () => {
               );
             })}
           </ul>
-
           <div
             className="cart-container"
             onClick={() => setShowCart(!showCart)}
           >
             <img src={cartIcon} alt="cart" className="cart" />
-            <span className="cart-value">8</span>
+            <span className="cart-value">{total_items}</span>
           </div>
         </div>
 
@@ -78,47 +72,7 @@ const Navbar = () => {
             );
           })}
         </div>
-        <section
-          className={`${showCart ? "show-overlay overlay " : "overlay"}`}
-        >
-          <article className={`${showCart ? "show-cart cartDiv " : "cartDiv"}`}>
-            <div className="cart-contents">
-              <div className="cart-heading">
-                <h4>
-                  {" "}
-                  cart<span>(3)</span>
-                </h4>
-                <button type="button" className="removeBtn">
-                  Remove all
-                </button>
-              </div>
-              <div className="cart-details">
-                <div className="item-card">
-                  <div className="cartItemNamePriceImg">
-                    <img src={testImg} alt="name" className="cart-Item-Img" />
-                    <div className="cartItemNamePrice">
-                      <h4>NAME</h4>
-                      <h4>PRICE</h4>
-                    </div>
-                  </div>
-
-                  <div className="amount">
-                    <HiMinusSm onClick={() => setCount(count - 1)} />
-                    <h4 className="count">{count}</h4>
-                    <HiPlusSm onClick={() => setCount(count + 1)} />
-                  </div>
-                </div>
-              </div>
-              <div className="total">
-                <h4>total</h4>
-                <h4>$599</h4>
-              </div>
-              <Link to="/">
-                <button className="btn checkoutBtn">Checkout</button>
-              </Link>
-            </div>
-          </article>
-        </section>
+        <Cart />
       </nav>
     </Wrapper>
   );
@@ -132,125 +86,6 @@ const Wrapper = styled.nav`
   width: 100%;
   top: 0;
   z-index: 2;
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: grid;
-    place-items: center;
-    transition: var(--transition);
-    visibility: hidden;
-    z-index: -1;
-  }
-  .show-overlay {
-    visibility: visible;
-    transition: var(--transition);
-    z-index: 10;
-  }
-  .cartDiv {
-    position: absolute;
-    left: 30px;
-    height: 40rem;
-    background: var(--clr-white);
-    width: 85%;
-    margin: 2rem auto;
-    border-radius: var(--radius);
-    transform: scale(0);
-    visibility: hidden;
-    transition: var(--transition);
-  }
-  .show-cart {
-    height: 40rem;
-    visibility: visible;
-    z-index: 2;
-    transform: scale(1);
-    transition: var(--transition);
-  }
-
-  .removeBtn {
-    background-color: transparent;
-    display: inline-block;
-    cursor: pointer;
-    color: var(--clr-black);
-    font-size: 10px;
-    text-decoration: none;
-    border: none;
-    text-transform: uppercase;
-    transition: var(--transition);
-    font-weight: 500;
-    font-size: 15px;
-  }
-  .cart-heading {
-    h4 {
-      font-size: 20px;
-      text-transform: uppercase;
-      margin: 0;
-    }
-  }
-  .cart-contents {
-    margin: 2rem;
-    .cart-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-  .cart-Item-Img {
-    width: 30%;
-    border-radius: var(--radius);
-  }
-  .cartItemNamePriceImg {
-    display: flex;
-    justify-contents: flex-start;
-    align-items: center;
-    width: 60%;
-  }
-  .cartItemNamePrice {
-    margin: 1rem;
-    h4 {
-      margin: 0;
-    }
-  }
-  .cart-details {
-    height: 25rem;
-    overflow: hidden;
-    overflow: scroll;
-  }
-
-  .item-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0;
-  }
-  .amount {
-    width: 6rem;
-    height: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--clr-primary-4);
-    font-size: 17px;
-    padding: 3px 10px;
-    border-radius: var(--radius);
-    h4 {
-      margin: 0;
-      font-size: 15px;
-      align-self: center;
-    }
-  }
-  .total {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
-  }
-  .checkoutBtn {
-    width: 100%;
-    padding: 15px 25px;
-  }
   .nav-center {
     width: 90vw;
     margin: 0 auto;

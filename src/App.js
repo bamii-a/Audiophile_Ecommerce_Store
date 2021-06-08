@@ -32,6 +32,9 @@ function App() {
           <Speakers />
         </Route>
         <Route exact path="/ProductDetail/:id" children={<ProductDetail />} />
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
         <Route exact path="*">
           <ErrorPage />
         </Route>

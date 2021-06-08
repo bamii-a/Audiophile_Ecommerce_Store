@@ -92,7 +92,7 @@ const Wrapper = styled.div`
     }
 
     .catImageContainer {
-      margin-right: 2rem;
+      
       .catImage {
         height: 30rem;
       }

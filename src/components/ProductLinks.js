@@ -11,7 +11,7 @@ import { backToTop } from "../utility/helpers";
 
 const ProductLinks = () => {
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   return (
     <Wrapper>
       <section className="productLinks-container section-center">
@@ -30,7 +30,7 @@ const ProductLinks = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link to={`/ProductDetail/${6}`}>
+            <Link to={`/ProductDetail/${6}`} onClick={() => backToTop()}>
               <button
                 type="button"
                 className="zx9-btn btn"
@@ -45,7 +45,7 @@ const ProductLinks = () => {
         <div className="speaker-ZX7-container">
           <div className="ZX7-contents">
             <h3>ZX7 SPEAKER</h3>
-            <Link to={`/ProductDetail/${5}`}>
+            <Link to={`/ProductDetail/${5}`} onClick={() => backToTop()}>
               <button
                 type="button"
                 className="zx7-btn btn"
@@ -63,12 +63,13 @@ const ProductLinks = () => {
 
           <div className="YX1-content">
             <h3>yx1 earphones</h3>
-            <Link to={`/ProductDetail/${1}`}>
+            <Link to={`/ProductDetail/${1}`} onClick={() => backToTop()}>
               <button
                 type="button"
                 className="yx1-btn btn"
                 onClick={() => backToTop()}
               >
+                {" "}
                 see product
               </button>
             </Link>

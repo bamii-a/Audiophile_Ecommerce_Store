@@ -1,24 +1,28 @@
 import React, { useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import { useParams, Link, useHistory } from "react-router-dom";
-import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 import { backToTop } from "../utility/helpers";
+import { useCartContext } from "../context/CartContext";
+import { AddToCart } from '../components'
+import data from '../data.json'
 
-
-const SingleProductDetail = ({
-  id,
-  name,
-  slug,
-  image,
-  description,
-  price,
-  features,
-  includes,
-  new: isNew,
-  gallery,
-  others,
-}) => {
+// console.log(data);
+const SingleProductDetail = ({...item}) => {
+  const { showCart, setShowCart} = useCartContext();
   const [count, setCount] = useState(1);
+  const {
+    id,
+    name,
+    slug,
+    image,
+    description,
+    price,
+    features,
+    includes,
+    new: isNew,
+    gallery,
+    others,
+  } = item;
 
   let imageForScreen;
   if (window.screen.width <= 414) {
@@ -28,8 +32,6 @@ const SingleProductDetail = ({
   } else {
     imageForScreen = `${image.desktop}`;
   }
-
-  console.log();
 
   let galleryScreenSize;
   if (window.screen.width <= 414) {
@@ -62,8 +64,6 @@ const SingleProductDetail = ({
     setCount(1);
   }
 
-
-  
   // const { mobile, desktop, tablet } = image;
   // console.log(mobile);
   return (
@@ -79,18 +79,9 @@ const SingleProductDetail = ({
             <h2>{name}</h2>
             <p>{description}</p>
             <h4>${price}</h4>
-            <div className="cartAdd">
-              <div className="amount">
-                <HiMinusSm onClick={() => setCount(count - 1)} />
-                <h4 className="count">{count}</h4>
-                <HiPlusSm onClick={() => setCount(count + 1)} />
-              </div>
-              <Link to="">
-                <button className="btn">add to cart</button>
-              </Link>
-            </div>
           </div>
         </article>
+        <AddToCart {...item}/>
 
         <article className="featuresBox">
           <div className="features">
@@ -139,7 +130,10 @@ const SingleProductDetail = ({
               let imageSizeOthers;
               if (window.screen.width <= 414) {
                 imageSizeOthers = `${image.mobile}`;
-              } else if (window.screen.width < 800 && window.screen.width >= 415) {
+              } else if (
+                window.screen.width < 800 &&
+                window.screen.width >= 415
+              ) {
                 imageSizeOthers = `${image.tablet}`;
               } else {
                 imageSizeOthers = `${image.desktop}`;
@@ -209,26 +203,7 @@ const Wrapper = styled.div`
       margin: 1rem auto 2rem;
       font-size: 0.9rem;
     }
-    .cartAdd {
-      display: flex;
-      justify-content: flex-start;
-      margin: 1rem auto 1rem 0;
-      width: 100%;
-    }
-    .amount {
-      width: 35%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--clr-primary-4);
-      font-size: 17px;
-      padding: 3px 20px;
-      h4 {
-        margin: 0;
-        font-size: 15px;
-        align-self: center;
-      }
-    }
+    
   }
   .inTheBox {
     margin: 4rem 0;
@@ -314,10 +289,6 @@ const Wrapper = styled.div`
         height: 100%;
         width: 100%;
       }
-      .cartAdd {
-        width: 100%;
-        justify-content: space-between;
-      }
     }
   }
   @media (min-width: 992px) {
@@ -378,10 +349,6 @@ const Wrapper = styled.div`
       .catImage {
         height: 100%;
         width: 100%;
-      }
-      .cartAdd {
-        width: 70%;
-        justify-content: space-between;
       }
     }
     .extras {

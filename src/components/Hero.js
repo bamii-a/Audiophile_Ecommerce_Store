@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import heroBackgroundMobile from "../assets/home/mobile/image-header.jpg";
 import heroBackgroundDesktop from "../assets/home/desktop/image-hero.jpg";
 import heroBackgroundTablet from "../assets/home/tablet/image-header.jpg";
+import { backToTop } from "../utility/helpers";
 
 const Hero = () => {
 
@@ -29,7 +30,7 @@ const Hero = () => {
             Experience natural, life like audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link to={`/ProductDetail/${4}`}>
+          <Link to={`/ProductDetail/${4}`} onClick={()=> backToTop()}>
             <button type="submit" className="btn hero-btn">
               see product
             </button>
