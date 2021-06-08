@@ -3,6 +3,7 @@ import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 import testImg from "../assets/product-xx59-headphones/mobile/image-product.jpg";
 import { useCartContext } from "../context/CartContext";
 import styled from "styled-components";
+import { formatPrice } from "../utility/helpers";
 
 const CartItems = ({id, images, price, name, amount}) => {
   const { removeItem, toggleAmount } = useCartContext();
@@ -22,20 +23,24 @@ const CartItems = ({id, images, price, name, amount}) => {
           <img src={images} alt="name" className="cart-Item-Img" />
           <div className="cartItemNamePrice">
             <h5>{name}</h5>
-            <h4>${price*amount}</h4>
+            <h4>{formatPrice(price * amount)}</h4>
           </div>
         </div>
-       
+
         <div className="amount">
           <HiMinusSm onClick={() => decrease()} />
           <h4 className="count">{amount}</h4>
           <HiPlusSm onClick={() => increase()} />
-              </div>
+        </div>
       </div>
-      <button type="button" className=" btn trashBtn" onClick={()=>removeItem(id)}>
-              delete item
+      <button
+        type="button"
+        className=" btn trashBtn"
+        onClick={() => removeItem(id)}
+      >
+        delete item
       </button>
-          <hr />
+      <hr />
     </Wrapper>
   );
 };

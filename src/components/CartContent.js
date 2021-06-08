@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 import { IoClose } from "react-icons/io5";
 import { CartItems, CartTotals } from "../components";
-import { logRoles } from "@testing-library/dom";
+
 const CartContent = () => {
   const { showCart, setShowCart, cart, clearCart } = useCartContext();
   const [count, setCount] = useState(1);
@@ -116,7 +116,7 @@ const Wrapper = styled.div`
   .cartDiv {
     position: absolute;
     background: var(--clr-white);
-    width: 35rem;
+    width: 90%;
     border-radius: var(--radius);
     transform: scale(0);
     visibility: hidden;
@@ -229,7 +229,7 @@ const Wrapper = styled.div`
   }
   @media (min-width: 992px) {
     .cartDiv {
-      width: 30rem;
+      width: 30%;
       margin: 0;
     }
   }

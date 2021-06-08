@@ -6,8 +6,6 @@ export const formatPrice = (number) => {
   return newNumber;
 };
 
-export const getUniqueValues = () => {};
-
 
 export const backToTop = () => {
   const body = document.querySelector("#root");

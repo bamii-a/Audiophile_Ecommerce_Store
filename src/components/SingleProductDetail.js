@@ -4,10 +4,9 @@ import { useParams, Link, useHistory } from "react-router-dom";
 import { backToTop } from "../utility/helpers";
 import { useCartContext } from "../context/CartContext";
 import { AddToCart } from '../components'
-import data from '../data.json'
+import { formatPrice } from '../utility/helpers'
 
-// console.log(data);
-const SingleProductDetail = ({...item}) => {
+const SingleProductDetail = ({ ...item }) => {
   const { showCart, setShowCart} = useCartContext();
   const [count, setCount] = useState(1);
   const {
@@ -78,7 +77,7 @@ const SingleProductDetail = ({...item}) => {
             {/*isNew && <h3 className="">new product</h3>*/}
             <h2>{name}</h2>
             <p>{description}</p>
-            <h4>${price}</h4>
+            <h4>{formatPrice(price)}</h4>
           </div>
         </article>
         <AddToCart {...item}/>
