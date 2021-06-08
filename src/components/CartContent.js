@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
@@ -7,7 +7,6 @@ import { CartItems, CartTotals } from "../components";
 
 const CartContent = () => {
   const { showCart, setShowCart, cart, clearCart } = useCartContext();
-  const [count, setCount] = useState(1);
 
   if (cart.length < 1) {
     return (
@@ -123,7 +122,7 @@ const Wrapper = styled.div`
     transition: var(--transition);
   }
   .show-cart {
-    height: 60vh;
+    height: 80vh;
     visibility: visible;
     z-index: 2;
     transform: scale(1);
@@ -231,6 +230,9 @@ const Wrapper = styled.div`
     .cartDiv {
       width: 30%;
       margin: 0;
+    }
+    .show-cart {
+      height: 60vh;
     }
   }
 `;
