@@ -34,11 +34,15 @@ const CartTotals = () => {
       <hr />
       <div className="total">
         <h4>total</h4>
-        <h4>{formatPrice(total_amount + shipping_fee + vat)}</h4>
+        <h4>
+          <span>{formatPrice(total_amount + shipping_fee + vat)}</span>
+        </h4>
       </div>
       <hr />
       <Link to="/checkout" onClick={() => setShowCart(false)}>
-        <button className="btn checkoutBtn" onClick={()=> backToTop()}>Checkout</button>
+        <button className="btn checkoutBtn" onClick={() => backToTop()}>
+          Checkout
+        </button>
       </Link>
     </Wrapper>
   );

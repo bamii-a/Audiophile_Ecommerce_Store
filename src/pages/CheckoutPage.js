@@ -1,11 +1,27 @@
-import React from 'react'
-
+import React, {useState} from "react";
+import styled from "styled-components";
+import { CheckoutCartSummary, CheckoutForm } from "../components";
+import { useCheckoutContext} from '../context/CheckoutContext'
 const CheckoutPage = () => {
-    return (
-        <div>
-            <h3>checkout</h3>
-        </div>
-    )
-}
+   const {handleSubmit} = useCheckoutContext()
 
-export default CheckoutPage
+  return (
+    <Wrapper>
+      <CheckoutForm  />
+          <CheckoutCartSummary />
+    </Wrapper>
+  );
+};
+const Wrapper = styled.div`
+  @media (min-width: 992px) {
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+  }
+  @media (min-width: 992px) and (max-width: 1400px) {
+    width: 50vw;
+  }
+  ${"" /* justify-content:center; */}
+`;
+export default CheckoutPage;

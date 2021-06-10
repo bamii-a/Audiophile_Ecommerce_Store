@@ -14,6 +14,10 @@ import Cart from "./CartContent";
 import AddToCart from "./AddToCart";
 import CartItems from "./CartItems";
 import CartTotals from "./CartTotals";
+import CheckoutCartSummary from "./CheckoutCartSummary";
+import CheckoutCartItem from "./CheckoutCartItem";
+import CheckoutTotals from "./CheckoutTotals";
+import CheckoutForm from "./CheckoutForm";
 
 export {
   Footer,
@@ -32,4 +36,8 @@ export {
   AddToCart,
   CartItems,
   CartTotals,
+  CheckoutCartSummary,
+  CheckoutCartItem,
+  CheckoutTotals,
+  CheckoutForm,
 };

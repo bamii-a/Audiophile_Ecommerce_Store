@@ -6,7 +6,8 @@ import { IoClose } from "react-icons/io5";
 import { CartItems, CartTotals } from "../components";
 
 const CartContent = () => {
-  const { showCart, setShowCart, cart, clearCart } = useCartContext();
+  const { showCart, setShowCart, cart, clearCart, total_items } =
+    useCartContext();
 
   if (cart.length < 1) {
     return (
@@ -54,7 +55,7 @@ const CartContent = () => {
             <div className="cart-heading">
               <h4>
                 {" "}
-                cart<span>(3)</span>
+                cart<span>({total_items})</span>
               </h4>
               <button
                 type="button"
@@ -210,6 +211,9 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
+    span {
+      color: var(--clr-primary-1);
+    }
   }
   .checkoutBtn {
     width: 100%;
