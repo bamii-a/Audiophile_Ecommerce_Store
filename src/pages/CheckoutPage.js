@@ -14,10 +14,12 @@ const CheckoutPage = () => {
 };
 const Wrapper = styled.div`
   @media (min-width: 992px) {
-    width: 60vw;
+    width: 65vw;
     margin: 0 auto;
+    max-width: var(--max-width);
     margin-top: 3rem;
     display: flex;
+    justify-content:space-between;
   }
   @media (min-width: 992px) and (max-width: 1400px) {
     width: 50vw;

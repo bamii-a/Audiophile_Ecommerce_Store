@@ -197,14 +197,7 @@ const Wrapper = styled.div`
     }
   }
   @media (min-width: 992px) {
-    width: 35%;
-    margin: 0 0 0 auto;
-    ${
-      "" /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 2 1 40rem; */
-    }
+    margin: 0 5rem 0 0;
   }
 `;
 export default CheckoutForm;

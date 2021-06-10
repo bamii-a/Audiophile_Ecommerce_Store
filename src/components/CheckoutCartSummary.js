@@ -58,14 +58,9 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 992px) {
-    width: 35%;
-    margin: 0 auto;
-    ${'' /* display: flex; */}
-    ${'' /* justify-content: flex-end; */}
-    ${'' /* align-items: flex-start; */}
-    ${'' /* flex:2 1 30rem; */}
+    width: 70%;
     .cartDiv {
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
     }
   }
