@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useCartContext } from "../context/CartContext";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { useProductContext } from "../context/productContext";
 
 
 const AddToCart = ({...item}) => {

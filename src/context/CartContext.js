@@ -1,6 +1,5 @@
 import React, { useContext, useReducer, useEffect, useState } from "react";
 import reducer from "../reducers/cart_reducer";
-import mainData from "../data.json";
 import {
   ADD_TO_CART,
   CLEAR_CART,

@@ -60,7 +60,7 @@ const Footer = () => {
 };
 
 const Wrapper = styled.footer`
-  margin-top:5rem;
+  margin-top: 5rem;
   text-align: center;
   background: black;
   min-height: 10vh;
@@ -81,7 +81,7 @@ const Wrapper = styled.footer`
   .icon {
     margin: 1rem 0.5rem;
     &:hover {
-      color: var(--clr-primary-1);
+      color: var(--clr-primary-1) !important;
     }
   }
 
@@ -122,8 +122,8 @@ const Wrapper = styled.footer`
       }
       .social-icons {
         width: 50%;
-        text-align:end;
-        padding-top:2.5rem;
+        text-align: end;
+        padding-top: 2.5rem;
         .icon {
           cursor: pointer;
           margin: 0 1rem;

@@ -3,8 +3,11 @@ import mainData from "../data.json";
 import { PageHero, CategoryLinks, HeadphoneCategory } from "../components";
 
 const Headphones = () => {
-  const [data, setData] = useState(mainData);
-
+  const [data, setData] = useState([]);
+useEffect(() => {
+  setData(mainData)
+}, [])
+  
   const headphones = data.filter(
     (item) => item.id === 2 || item.id === 3 || item.id === 4
   );

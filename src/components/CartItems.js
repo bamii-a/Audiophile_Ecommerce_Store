@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
-import testImg from "../assets/product-xx59-headphones/mobile/image-product.jpg";
 import { useCartContext } from "../context/CartContext";
 import styled from "styled-components";
 import { formatPrice } from "../utility/helpers";

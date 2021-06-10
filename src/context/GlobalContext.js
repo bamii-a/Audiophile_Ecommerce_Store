@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect, useReducer } from "react";
-import mainData from "../data.json";
+import React, { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import reducer from "../reducers/products_Reducer";
 import {

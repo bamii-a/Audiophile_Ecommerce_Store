@@ -1,9 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import { CheckoutCartSummary, CheckoutForm } from "../components";
-import { useCheckoutContext} from '../context/CheckoutContext'
 const CheckoutPage = () => {
-   const {handleSubmit} = useCheckoutContext()
 
   return (
     <Wrapper>

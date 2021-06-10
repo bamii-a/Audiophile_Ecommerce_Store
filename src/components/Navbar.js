@@ -8,7 +8,6 @@ import cartIcon from "../assets/shared/desktop/icon-cart.svg";
 import navlinks from "../navlinks.json";
 import { FaAngleRight } from "react-icons/fa";
 import { Cart } from "../components";
-import { useGlobalCartContext } from "../context/CartContext";
 import { useCartContext } from "../context/CartContext";
 import { backToTop } from "../utility/helpers";
 

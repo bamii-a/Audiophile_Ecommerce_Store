@@ -1,6 +1,4 @@
 import React from "react";
-import { HiMinusSm, HiPlusSm } from "react-icons/hi";
-import { useCartContext } from "../context/CartContext";
 import styled from "styled-components";
 import { formatPrice } from "../utility/helpers";
 

@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
-import circles from "../assets/home/desktop/pattern-circles.svg";
 import speakerZX9 from "../assets/home/mobile/image-speaker-zx9.png";
 import speakerZX7_mobile from "../assets/home/mobile/image-speaker-zx7.jpg";
 import speakerZX7_desktop from "../assets/home/desktop/image-speaker-zx7.jpg";
 import earphonesYX1 from "../assets/home/mobile/image-earphones-yx1.jpg";
-import earphonesYX1_desktop from "../assets/home/desktop/image-earphones-yx1.jpg";
 import { backToTop } from "../utility/helpers";
 
 const ProductLinks = () => {
   const { id } = useParams();
-  // console.log(id);
+  
   return (
     <Wrapper>
       <section className="productLinks-container section-center">

@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState} from "react";
 import styled from "styled-components";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { backToTop } from "../utility/helpers";
-import { useCartContext } from "../context/CartContext";
 import { AddToCart } from '../components'
 import { formatPrice } from '../utility/helpers'
 
 const SingleProductDetail = ({ ...item }) => {
-  const { showCart, setShowCart} = useCartContext();
   const [count, setCount] = useState(1);
   const {
     id,
