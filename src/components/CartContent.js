@@ -14,16 +14,21 @@ const CartContent = () => {
       <Wrapper>
         <section
           className={`${showCart ? "show-overlay overlay " : "overlay"}`}
+          onClick={() => setShowCart(false)}
         >
-          <article className={`${showCart ? "show-cart cartDiv " : "cartDiv"}`}>
+          <article
+            className={`${
+              showCart ? "show-cart emptyCartHeight cartDiv " : "cartDiv "
+            }`}
+          >
             <button
               type="button"
-              className="closeCartBtn"
+              className="closeCartBtn closeEmptyCart"
               onClick={() => setShowCart(false)}
             >
               <IoClose />
             </button>
-            <h4 style={{ "text-align": "center", "margin-top": "5rem" }}>
+            <h4 style={{ "text-align": "center", "margin-top": "1rem" }}>
               cart is empty
             </h4>
             <Link
@@ -39,7 +44,7 @@ const CartContent = () => {
               }}
               onClick={() => setShowCart(false)}
             >
-              fill me up
+              fill cart
             </Link>
           </article>
         </section>
@@ -49,7 +54,7 @@ const CartContent = () => {
 
   return (
     <Wrapper>
-      <section className={`${showCart ? "show-overlay overlay " : "overlay"}`}>
+      <section className={`${showCart ? "show-overlay overlay " : "overlay"}`} onClick={() => setShowCart(false)}>
         <article className={`${showCart ? "show-cart cartDiv " : "cartDiv"}`}>
           <div className="cart-contents">
             <div className="cart-heading">
@@ -122,6 +127,9 @@ const Wrapper = styled.div`
     visibility: hidden;
     transition: var(--transition);
   }
+  .emptyCartHeight {
+    height: 30vh !important;
+  }
   .show-cart {
     height: 80vh;
     visibility: visible;
@@ -139,10 +147,13 @@ const Wrapper = styled.div`
     transition: var(--transition);
   }
   .closeCartBtn:hover {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
     transition: var(--transition);
   }
-
+  .closeEmptyCart {
+    margin: 4rem 4rem 1rem;
+    font-size: 26px;
+  }
   @keyframes cartMove {
     0% {
       transform: scale(0);
